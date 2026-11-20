@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Client-Side Form Processing Example</title>
+  </head>
+  <body>
+    <h2>Favourite Programming Language</h2>
+
+    <form id="languageForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" /><br /><br />
+
+      <label for="language">Favourite Language:</label>
+      <select id="language">
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>Java</option>
+        <option>C#</option></select
+      ><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+      document
+        .getElementById("languageForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevents form submission to a server
+
+          const name = document.getElementById("name").value;
+          const language = document.getElementById("language").value;
+
+          const message = `${name}'s favourite programming language is ${language}.`;
+
+          document.getElementById("output").textContent = message;
+        });
+    </script>
+  </body>
+</html>
